@@ -10,14 +10,13 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
   <!-- ============================================================
-    TASK 1 — Logo: optimize the SVG.
+    TASK 1 — Logo: optimized SVG with meaningful alt text
   ============================================================ -->
   <header class="site-header">
     <div class="header-inner">
       <a href="#" class="logo-link">
-        <img src="images/ridgeline-logo.svg" alt="" class="logo">
+        <img src="images/ridgeline-logo-opt.svg" alt="Ridgeline wordmark" class="logo">
       </a>
       <nav class="site-nav">
         <a href="#">Gear</a>
@@ -28,18 +27,22 @@
     </div>
   </header>
 
-
   <!-- ============================================================
-    TASK 2 — Hero: optimize with Squoosh
-    Complete this before Task 3 — you need these files ready first.
-    Open images/hero.png in Squoosh and export four WebP versions.
-
-    TASK 3 — Hero: replace background image + resolution switching
-    The hero is a CSS background image — remove it and replace it
-    with a real <img> so srcset can work.
+    TASK 3 — Hero: real <img> with resolution switching via srcset
+    (background-image removed from .hero in style.css)
   ============================================================ -->
   <section class="hero">
-    <!-- Task 3: Add your <img> element here, before hero__content -->
+    <!-- Task 3: <img> as first child, absolutely positioned to fill hero -->
+    <img
+      class="hero__bg"
+      src="images/hero.png"
+      srcset="images/hero-400.webp 400w,
+              images/hero-800.webp 800w,
+              images/hero-1200.webp 1200w,
+              images/hero-1920.webp 1920w"
+      sizes="100vw"
+      alt="A lone hiker on a misty mountain trail at sunrise"
+    >
     <div class="hero__content">
       <p class="hero__label">Spring / Summer 2026</p>
       <h1 class="hero__title">Built for<br>the Trail</h1>
@@ -48,11 +51,8 @@
     </div>
   </section>
 
-
   <!-- ============================================================
-    TASK 4 — Product images: optimize with Squoosh
-    Both product images are large PNGs. WebP is fully supported
-    by all modern browsers — no fallback needed, just use it directly.
+    TASK 4 — Product images: WebP versions
   ============================================================ -->
   <section class="featured-gear">
     <div class="section-header">
@@ -60,11 +60,10 @@
       <p>Tested on the Gatineau Hills. Ready for anywhere.</p>
     </div>
     <div class="gear-grid">
-
       <article class="gear-card">
         <div class="gear-card__image">
-          <!-- Task 4: Update src to product-jacket.webp -->
-          <img src="images/product-jacket.png" alt="Ridgeline Apex Shell Jacket in olive green">
+          <!-- Task 4: Updated to product-jacket.webp -->
+          <img src="images/product-jacket.webp" alt="Ridgeline Apex Shell Jacket in olive green">
         </div>
         <div class="gear-card__body">
           <span class="gear-card__tag">Outerwear</span>
@@ -76,11 +75,10 @@
           </div>
         </div>
       </article>
-
       <article class="gear-card">
         <div class="gear-card__image">
-          <!-- Task 4: Update src to product-boots.webp -->
-          <img src="images/product-boots.png" alt="Ridgeline Summit Mid hiking boots in brown leather">
+          <!-- Task 4: Updated to product-boots.webp -->
+          <img src="images/product-boots.webp" alt="Ridgeline Summit Mid hiking boots in brown leather">
         </div>
         <div class="gear-card__body">
           <span class="gear-card__tag">Footwear</span>
@@ -92,15 +90,11 @@
           </div>
         </div>
       </article>
-
     </div>
   </section>
 
-
   <!-- ============================================================
-    TASK 5 — Blog images: optimize with Squoosh
-    Same approach as Task 4 — optimize all three to WebP and
-    update the src on each <img> to point to the new file.
+    TASK 5 — Blog images: WebP versions
   ============================================================ -->
   <section class="trail-notes">
     <div class="trail-notes__inner">
@@ -109,11 +103,10 @@
         <p>Dispatches from the field.</p>
       </div>
       <div class="notes-grid">
-
         <article class="note-card">
           <div class="note-card__image">
-            <!-- Task 5: Update src to note-rideau.webp -->
-            <img src="images/note-rideau.png" alt="A hiker crossing a wooden bridge on the Rideau Trail">
+            <!-- Task 5: Updated to note-rideau.webp -->
+            <img src="images/note-rideau.webp" alt="A hiker crossing a wooden bridge on the Rideau Trail">
           </div>
           <div class="note-card__body">
             <div class="note-card__meta">
@@ -125,11 +118,10 @@
             <a href="#" class="text-link">Read more →</a>
           </div>
         </article>
-
         <article class="note-card">
           <div class="note-card__image">
-            <!-- Task 5: Update src to note-gatineau.webp -->
-            <img src="images/note-gatineau.png" alt="Snow-covered trees on a Gatineau Hills winter trail">
+            <!-- Task 5: Updated to note-gatineau.webp -->
+            <img src="images/note-gatineau.webp" alt="Snow-covered trees on a Gatineau Hills winter trail">
           </div>
           <div class="note-card__body">
             <div class="note-card__meta">
@@ -141,11 +133,10 @@
             <a href="#" class="text-link">Read more →</a>
           </div>
         </article>
-
         <article class="note-card">
           <div class="note-card__image">
-            <!-- Task 5: Update src to note-supply.webp -->
-            <img src="images/note-supply.png" alt="A textile factory floor with workers at sewing machines">
+            <!-- Task 5: Updated to note-supply.webp -->
+            <img src="images/note-supply.webp" alt="A textile factory floor with workers at sewing machines">
           </div>
           <div class="note-card__body">
             <div class="note-card__meta">
@@ -157,29 +148,27 @@
             <a href="#" class="text-link">Read more →</a>
           </div>
         </article>
-
       </div>
     </div>
   </section>
 
-
   <!-- ============================================================
-    TASK 6 — Banner: optimize and prepare two crops
-    Open images/landscape-banner.png in Squoosh and export two
-    versions before touching the HTML:
-
     TASK 7 — Banner: art direction with <picture>
-    The banner is a CSS background image — same fix as Task 3.
+    (background-image removed from .landscape-banner in style.css)
   ============================================================ -->
   <section class="landscape-banner">
-    <!-- Task 7: Add your <picture> element here, before landscape-banner__content -->
+    <!-- Task 7: <picture> as first child for art direction -->
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/banner-portrait.webp">
+      <source media="(min-width: 769px)" srcset="images/banner-wide.webp">
+      <img class="landscape-banner__bg" src="images/banner-wide.webp" alt="A misty forest trail at dawn">
+    </picture>
     <div class="landscape-banner__content">
       <h2>Every trail<br>has a story.</h2>
       <p>Ridgeline gear is built for the ones worth telling.</p>
       <a href="#" class="btn btn--outline">Find Your Trail</a>
     </div>
   </section>
-
 
   <!-- ============================================================
     FOOTER — no changes needed here
@@ -219,6 +208,5 @@
       <p>Designed and built in Ottawa, ON.</p>
     </div>
   </footer>
-
 </body>
 </html>
